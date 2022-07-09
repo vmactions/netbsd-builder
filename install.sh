@@ -143,5 +143,14 @@ service  sshd restart
 ' >enablessh.txt
 
 
+echo "
+
+echo '$(cat ~/.ssh/id_rsa.pub)' >>~/.ssh/authorized_keys
+
+chmod 600 ~/.ssh/authorized_keys
+
+" >>enablessh.txt
+
+
 $vmsh inputFile $osname enablessh.txt
 
