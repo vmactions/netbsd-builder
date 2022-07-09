@@ -5,7 +5,7 @@ set -e
 
 _conf="$1"
 
-if [ -z "$_conf"]; then
+if [ -z "$_conf" ] ; then
   echo "Please give the conf file"
   exit 1
 fi
@@ -28,6 +28,7 @@ vboxlink="$VM_VBOX_LINK"
 vmsh="$VM_VBOX"
 
 
+export VM_OS_NAME
 
 
 
@@ -51,7 +52,7 @@ inputKeys() {
 
 
 
-if [ ! -e "$vmsh" ]; then
+if [ ! -e "$vmsh" ] ; then
   wget -O "$vmsh" "$vboxlink"
 fi
 
