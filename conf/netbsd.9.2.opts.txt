@@ -1,0 +1,51 @@
+#
+# wait screen text  | press key
+
+Boot normally | enter
+
+Installation messages | enter
+
+unchanged | enter
+
+Install NetBSD to hard disk | enter
+
+Shall we continue | down ; enter
+
+Available disks | enter
+
+Guid Partition Table | enter
+
+This is the correct geometr | enter
+
+Use default partition sizes | down ; enter
+
+
+Partition sizes | enter
+
+
+Shall we continue | down ; enter
+
+
+Use BIOS console | enter
+
+
+Installation without X11 | down ; enter
+
+Install from   | enter
+
+
+Hit enter to continue  | enter
+
+
+Enable sshd | string g ; enter ; string h ; enter ;string i ; enter ;string i ; enter
+
+Hit enter to continue | enter
+
+
+Reboot the computer | string d ; enter
+
+
+Boot normally | enter
+
+
+Installation messages | down
