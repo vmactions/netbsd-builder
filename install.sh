@@ -113,11 +113,13 @@ sleep 2
 
 echo '
 
-sed -i "s/PermitRootLogin no/PermitRootLogin yes/" /etc/ssh/sshd_config
+chmod +w /etc/ssh/sshd_config
+
+sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" /etc/ssh/sshd_config
 
 sed -i "s/#PermitEmptyPasswords no/PermitEmptyPasswords yes/" /etc/ssh/sshd_config
 
-sed -i "s/#PubkeyAuthentication no/PubkeyAuthentication yes/" /etc/ssh/sshd_config
+sed -i "s/#PubkeyAuthentication yes/PubkeyAuthentication yes/" /etc/ssh/sshd_config
 
 
 echo "AcceptEnv   *"  >> /etc/ssh/sshd_config
@@ -130,6 +132,8 @@ ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -N ""
 
 echo "StrictHostKeyChecking=accept-new" >>~/.ssh/config
 
+
+chmod -w /etc/ssh/sshd_config
 
 service  sshd restart
 
