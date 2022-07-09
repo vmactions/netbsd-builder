@@ -37,7 +37,7 @@ Install from   | enter
 Hit enter to continue  | enter
 
 
-Enable sshd | string g ; enter ; sleep 1; string h ; enter ; sleep 1; string i ; enter 
+Enable sshd | string g ; enter ; sleep 1; string h ; enter ; sleep 1; string i ; enter ; sleep 1; string x ; enter 
 
 
 Hit enter to continue | enter
