@@ -102,6 +102,8 @@ $vmsh startVM $osname
 
 
 
+#################################################################################
+
 waitForText "NetBSD/amd64 (localhost) (constty)"
 
 sleep 2
@@ -153,4 +155,32 @@ chmod 600 ~/.ssh/authorized_keys
 
 
 $vmsh inputFile $osname enablessh.txt
+
+
+
+###############################################################
+
+ssh $osname 'cat ~/.ssh/id_rsa.pub' >id_rsa.pub
+
+ssh $osname  "shutdown -p now"
+
+sleep 5
+
+###############################################################
+
+$vmsh shutdownVM $osname
+
+
+##############################################################
+
+
+ova="$VM_OVA_NAME.ova"
+
+$vmsh exportOVA $osname "$ova"
+
+
+zip -0 -s 2000m $ova.zip  $ova id_rsa.pub
+
+
+
 
