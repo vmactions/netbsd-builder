@@ -162,7 +162,7 @@ $vmsh inputFile $osname enablessh.txt
 
 ssh $osname 'cat ~/.ssh/id_rsa.pub' >id_rsa.pub
 
-ssh $osname  "shutdown -p now"
+ssh $osname  "/sbin/shutdown -p now"
 
 sleep 5
 
