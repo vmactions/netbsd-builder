@@ -72,10 +72,12 @@ fi
 $vmsh createVM  $VM_ISO_LINK $osname $ostype $sshport
 
 
-$vmsh startCF
+
+$vmsh startWeb $osname
+
 
 echo "========================"
-$vmsh startWeb $osname
+$vmsh startCF
 echo "========================"
 
 
