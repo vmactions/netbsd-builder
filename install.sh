@@ -80,9 +80,9 @@ $vmsh startWeb $osname
 $vmsh startCF
 
 
-
-echo "Sleep 10 seconds, please open the link in your browser."
-sleep 20
+_sleep=20
+echo "Sleep $_sleep seconds, please open the link in your browser."
+sleep $_sleep
 
 $vmsh startVM $osname
 
