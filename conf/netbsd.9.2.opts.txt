@@ -37,6 +37,26 @@ Install from   | enter
 Hit enter to continue  | enter
 
 
+
+
+
+Configure the additional items as needed |  string a ; enter 
+
+Which network device would you like to use | enter
+
+Network media type | enter
+
+Perform autoconf | enter
+
+Your DNS domain | string vmactions.org ; enter
+
+The following are the values you entered |  enter
+
+Is the network information you entered accurate | enter
+
+
+
+
 Enable sshd | string g ; enter ; sleep 1; string h ; enter ; sleep 1; string i ; enter ; sleep 1; string x ; enter 
 
 
