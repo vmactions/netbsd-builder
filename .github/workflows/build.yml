@@ -18,7 +18,7 @@ jobs:
         check-latest: true
     - run: |
         chmod +x install.sh
-        ./install.sh conf/netbsd.9.2.conf
+        ./install.sh conf/netbsd-9.2.conf
     - name: Get release
       if: "contains(github.ref, 'refs/tags/')"
       id: get_release
