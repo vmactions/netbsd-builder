@@ -68,6 +68,13 @@ fi
 
 $vmsh createVM  $VM_ISO_LINK $osname $ostype $sshport
 
+
+$vmsh startCF
+$vmsh startWeb
+
+echo "Sleep 10 seconds, please open the link in your browser."
+sleep 10
+
 $vmsh startVM $osname
 
 sleep 2
@@ -83,6 +90,7 @@ $vmsh shutdownVM $osname
 $vmsh detachISO $osname
 
 $vmsh startVM $osname
+
 
 
 
