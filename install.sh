@@ -47,7 +47,7 @@ waitForText() {
 
 
 inputKeys() {
-  $vmsh inputKeys $osname "$1"
+  $vmsh input $osname "$1"
 }
 
 
@@ -57,6 +57,9 @@ if [ ! -e "$vmsh" ] ; then
 fi
 
 chmod +x "$vmsh"
+
+
+$vmsh addSSHHost  $osname $sshport
 
 
 
@@ -93,4 +96,13 @@ $vmsh startVM $osname
 
 
 
+waitForText "NetBSD/amd64 (Amnesiac) (constty)"
+
+sleep 2
+
+inputKeys "string root; enter"
+
+sleep 2
+
+$vmsh screenText $osname
 
