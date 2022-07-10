@@ -13,8 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        chmod +x install.sh
-        ./install.sh conf/netbsd-9.2.conf
+        bash install.sh conf/netbsd-9.2.conf
     - name: Get release
       if: "contains(github.ref, 'refs/tags/')"
       id: get_release
@@ -30,7 +29,7 @@ jobs:
       with:
         upload_url: ${{ steps.get_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
         asset_path: ./netbsd-9.2.ova.zip
-        asset_name: netbsd-9.2.ova.ova.zip
+        asset_name: netbsd-9.2.ova.zip
         asset_content_type: application/zip
 
 
