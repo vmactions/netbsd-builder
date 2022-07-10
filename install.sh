@@ -161,7 +161,7 @@ $vmsh inputFile $osname enablessh.txt
 ###############################################################
 
 
-ssh $osname "PKG_PATH=\"http://cdn.NetBSD.org/pub/pkgsrc/packages/NetBSD/\$(uname -p)/\$(uname -r|cut -f '1 2' -d.)/All/\" pkg_add ca-certificates"
+ssh $osname "PKG_PATH=\"http://cdn.NetBSD.org/pub/pkgsrc/packages/NetBSD/\$(uname -p)/\$(uname -r|cut -f '1 2' -d.)/All/\" /usr/sbin/pkg_add ca-certificates"
 
 ssh $osname 'cat ~/.ssh/id_rsa.pub' >id_rsa.pub
 
