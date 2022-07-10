@@ -48,7 +48,7 @@ Network media type | enter
 
 Perform autoconf | enter
 
-Your DNS domain | string vmactions.org ; enter
+Your DNS domain | string vmactions.org ; enter | 5
 
 The following are the values you entered |  enter
 
