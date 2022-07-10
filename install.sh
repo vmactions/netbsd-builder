@@ -178,8 +178,9 @@ ova="$VM_OVA_NAME.ova"
 
 $vmsh exportOVA $osname "$ova"
 
+cp ~/.ssh/id_rsa  mac.id_rsa
 
-zip -0 -s 2000m $ova.zip  $ova id_rsa.pub
+zip -0 -s 2000m $ova.zip  $ova id_rsa.pub mac.id_rsa
 
 
 
