@@ -127,6 +127,9 @@ sed -i "s/#PubkeyAuthentication yes/PubkeyAuthentication yes/" /etc/ssh/sshd_con
 
 echo "AcceptEnv   *"  >> /etc/ssh/sshd_config
 
+echo "PermitUserEnvironment yes"  >> /etc/ssh/sshd_config
+
+
 mkdir -p ~/.ssh
 
 chmod -R 600 ~/.ssh
@@ -135,6 +138,7 @@ ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -N ""
 
 echo "StrictHostKeyChecking=accept-new" >>~/.ssh/config
 
+echo "PKG_PATH=http://cdn.NetBSD.org/pub/pkgsrc/packages/NetBSD/$(uname -p)/$(uname -r|cut -f '1 2' -d.)/All/" >>~/.ssh/environment
 
 chmod -w /etc/ssh/sshd_config
 
@@ -162,7 +166,7 @@ $vmsh inputFile $osname enablessh.txt
 ###############################################################
 
 
-ssh $osname "PKG_PATH=\"http://cdn.NetBSD.org/pub/pkgsrc/packages/NetBSD/\$(uname -p)/\$(uname -r|cut -f '1 2' -d.)/All/\" /usr/sbin/pkg_add ca-certificates"
+ssh $osname "$VM_INSTALL_CMD ca-certificates"
 
 ssh $osname 'cat ~/.ssh/id_rsa.pub' >id_rsa.pub
 
