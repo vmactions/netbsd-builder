@@ -13,14 +13,17 @@ jobs:
   build:
     runs-on: macos-12
     env:
-      RELEASE: 8.0
+      RELEASE: "8.0"
       DEBUG: 1
+      VM_OS_NAME: netbsd
     steps:
     - uses: actions/checkout@v2
     - name: Sleep
       run: |
         for i in $(seq 1 10) ; do echo $i; sleep 1; done
         echo "please loging to ssh below, and run 'bash build.sh conf/netbsd-$RELEASE.conf'"
+        touch /tmp/keepalive
+        
     - uses: neilpang/debugger-action@master
 
 #    - run: |
