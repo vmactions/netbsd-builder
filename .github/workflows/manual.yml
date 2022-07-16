@@ -1,0 +1,28 @@
+name: "Build"
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - '*'
+    paths:
+      - '.github/workflows/manual.yml'
+
+
+jobs:
+  build:
+    runs-on: macos-12
+    env:
+      RELEASE: 8.0
+      DEBUG: 1
+    steps:
+    - uses: neilpang/debugger-action@master
+    - name: Sleep
+      run: sleep 20
+    - uses: actions/checkout@v2
+    - run: |
+        bash build.sh conf/netbsd-$RELEASE.conf
+
+
+
+
