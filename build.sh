@@ -138,7 +138,7 @@ ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -N ""
 
 echo "StrictHostKeyChecking=accept-new" >>~/.ssh/config
 
-echo "PKG_PATH=http://cdn.NetBSD.org/pub/pkgsrc/packages/NetBSD/$(uname -p)/$(uname -r|cut -f '1 2' -d.)/All/" >>~/.ssh/environment
+echo "PKG_PATH=http://cdn.NetBSD.org/pub/pkgsrc/packages/NetBSD/$(uname -p)/$(uname -r|cut -f 1,2 -d.)/All/" >>~/.ssh/environment
 
 chmod -w /etc/ssh/sshd_config
 
