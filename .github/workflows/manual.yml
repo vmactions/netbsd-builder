@@ -1,4 +1,4 @@
-name: "Build"
+name: "Manual"
 on:
   workflow_dispatch:
 
@@ -16,12 +16,16 @@ jobs:
       RELEASE: 8.0
       DEBUG: 1
     steps:
-    - uses: neilpang/debugger-action@master
-    - name: Sleep
-      run: sleep 20
     - uses: actions/checkout@v2
-    - run: |
-        bash build.sh conf/netbsd-$RELEASE.conf
+    - name: Sleep
+      run: |
+        for i in $(seq 1 10) ; do echo $i; sleep 1; done
+        echo "please loging to ssh below, and run 'bash build.sh conf/netbsd-$RELEASE.conf'"
+    - uses: neilpang/debugger-action@master
+
+#    - run: |
+#        bash build.sh conf/netbsd-$RELEASE.conf
+
 
 
 
