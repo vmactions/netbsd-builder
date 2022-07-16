@@ -46,7 +46,7 @@ Which network device would you like to use | enter
 
 Network media type | enter
 
-Perform autoconf | enter
+Perform autoconf | enter ; sleep 5
 
 Your DNS domain | string vmactions.org ; enter | 5
 
