@@ -114,41 +114,8 @@ inputKeys "string root; enter"
 sleep 2
 
 
-echo '
 
-chmod +w /etc/ssh/sshd_config
-
-sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" /etc/ssh/sshd_config
-
-sed -i "s/#PermitEmptyPasswords no/PermitEmptyPasswords yes/" /etc/ssh/sshd_config
-
-sed -i "s/#PubkeyAuthentication yes/PubkeyAuthentication yes/" /etc/ssh/sshd_config
-
-
-echo "AcceptEnv   *"  >> /etc/ssh/sshd_config
-
-echo "PermitUserEnvironment yes"  >> /etc/ssh/sshd_config
-
-
-mkdir -p ~/.ssh
-
-chmod -R 600 ~/.ssh
-
-ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -N ""
-
-echo "StrictHostKeyChecking=accept-new" >>~/.ssh/config
-
-echo "PKG_PATH=http://cdn.NetBSD.org/pub/pkgsrc/packages/NetBSD/$(uname -p)/$(uname -r|cut -f 1,2 -d.)/All/" >>~/.ssh/environment
-
-chmod -w /etc/ssh/sshd_config
-
-service  sshd restart
-
-
-
-
-' >enablessh.txt
-
+cat enablessh.txt >enablessh.local
 
 echo "
 
@@ -156,10 +123,10 @@ echo '$(cat ~/.ssh/id_rsa.pub)' >>~/.ssh/authorized_keys
 
 chmod 600 ~/.ssh/authorized_keys
 
-" >>enablessh.txt
+" >>enablessh.local
 
 
-$vmsh inputFile $osname enablessh.txt
+$vmsh inputFile $osname enablessh.local
 
 
 
