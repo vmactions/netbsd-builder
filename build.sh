@@ -102,10 +102,11 @@ $vmsh startVM $osname
 
 
 
-#################################################################################
+###############################################
 
-waitForText "NetBSD/amd64 (localhost) (constty)"
 
+
+waitForText "$VM_LOGIN_TAG"
 sleep 2
 
 inputKeys "string root; enter"
