@@ -10,6 +10,7 @@ jobs:
       RELEASE: "8.0"
       DEBUG: 1
       VM_OS_NAME: netbsd
+      NGROK_TOKEN : ${{ secrets.NGROK_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     - name: Run establish a ngrok tunnel
