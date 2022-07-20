@@ -138,8 +138,10 @@ $vmsh inputFile $osname enablessh.local
 
 ###############################################################
 
+if [ -e "hooks/postBuild.sh" ]; then
+  ssh $osname <"hooks/postBuild.sh"
+fi
 
-ssh $osname "$VM_INSTALL_CMD ca-certificates"
 
 ssh $osname 'cat ~/.ssh/id_rsa.pub' >$osname-$VM_RELEASE-id_rsa.pub
 
