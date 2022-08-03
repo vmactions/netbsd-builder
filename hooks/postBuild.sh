@@ -2,7 +2,14 @@
 
 
 
-/usr/sbin/pkg_add  ca-certificates
+/usr/sbin/pkg_add  mozilla-rootcerts
+
+rm -f /usr/pkg/etc/openssl/certs/*
+
+/usr/pkg/sbin/mozilla-rootcerts  install
+
+
+
 
 
 
