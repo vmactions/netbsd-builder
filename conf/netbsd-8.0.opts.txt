@@ -3,7 +3,7 @@
 
 Boot normally | enter
 
-Installation messages | enter
+Installation | enter
 
 unchanged | enter
 
