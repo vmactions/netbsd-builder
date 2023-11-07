@@ -78,8 +78,6 @@ $vmsh startWeb $osname
 $vmsh createVM  $VM_ISO_LINK $osname $ostype $sshport
 
 
-$vmsh startVM $osname
-
 sleep 2
 
 
