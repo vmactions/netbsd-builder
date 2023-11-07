@@ -1,7 +1,7 @@
 #
 # wait screen text  | press key
 
-Boot normally | enter
+Boot normally | enter | 10
 
 Installation | enter
 
