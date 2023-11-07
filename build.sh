@@ -85,8 +85,6 @@ $vmsh  processOpts  $osname  "$opts"
 
 
 
-$vmsh shutdownVM $osname
-
 
 
 

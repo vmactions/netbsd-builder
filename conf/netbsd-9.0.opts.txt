@@ -68,6 +68,6 @@ Hit enter to continue | enter
 
 
 #Reboot the computer 
-Install NetBSD| string d ; enter; sleep 5
+Install NetBSD| string d ; enter; sleep 20
 
 
