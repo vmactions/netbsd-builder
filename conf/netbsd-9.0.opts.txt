@@ -9,7 +9,7 @@ unchanged | enter
 
 Install NetBSD to hard disk | enter
 
-Shall we continue | down ; enter
+After you enter the partition | down ; enter
 
 Available disks | enter
 
