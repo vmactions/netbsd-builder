@@ -24,12 +24,17 @@ jobs:
   build:
     strategy:
       matrix:
-        os: ["8.0", "8.1", "8.2", "9.0", "9.1", "9.2", "9.3"]
-    runs-on: macos-12
+        os: ["9.3"]
+    runs-on: ubuntu-22.04
     env:
       SEC_VBOX : ${{ secrets.SEC_VBOX }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+    - uses: vmactions/cf-tunnel@v0
+      id: tunnel
+      with:
+        protocol: http
+        port: 8000
     - run: |
         bash build.sh conf/netbsd-${{ matrix.os }}.conf
     - name: Upload Release Asset
@@ -40,8 +45,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         files: |
-          netbsd-${{ matrix.os }}.ova
+          netbsd-${{ matrix.os }}.qcow2.xz
           netbsd-${{ matrix.os }}-id_rsa.pub
-          netbsd-${{ matrix.os }}-mac.id_rsa
+          netbsd-${{ matrix.os }}-host.id_rsa
 
 

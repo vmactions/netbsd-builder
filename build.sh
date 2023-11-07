@@ -60,7 +60,7 @@ fi
 chmod +x "$vmsh"
 
 
-$vmsh addSSHHost  $osname $sshport
+
 
 
 
@@ -70,20 +70,13 @@ if ! $vmsh clearVM $osname; then
   echo "vm does not exists"
 fi
 
-$vmsh createVM  $VM_ISO_LINK $osname $ostype $sshport
-
-
 
 $vmsh startWeb $osname
 
 
 
-$vmsh startCF
+$vmsh createVM  $VM_ISO_LINK $osname $ostype $sshport
 
-
-_sleep=20
-echo "Sleep $_sleep seconds, please open the link in your browser."
-sleep $_sleep
 
 $vmsh startVM $osname
 
@@ -97,9 +90,10 @@ $vmsh  processOpts  $osname  "$opts"
 $vmsh shutdownVM $osname
 
 
-$vmsh detachISO $osname
+
 
 $vmsh startVM $osname
+
 
 
 
@@ -135,18 +129,21 @@ echo >>enablessh.local
 
 $vmsh inputFile $osname enablessh.local
 
+
+###############################################################
+
+$vmsh addSSHHost  $osname $sshport
+
+
 ssh $osname sh <<EOF
 echo 'StrictHostKeyChecking=accept-new' >.ssh/config
 
 echo "Host host" >>.ssh/config
-echo "     HostName  10.0.2.2" >>.ssh/config
+echo "     HostName  192.168.122.1" >>.ssh/config
 echo "     User runner" >>.ssh/config
 echo "     ServerAliveInterval 1" >>.ssh/config
 
 EOF
-
-
-###############################################################
 
 
 if [ -e "hooks/postBuild.sh" ]; then
@@ -176,13 +173,13 @@ $vmsh shutdownVM $osname
 
 
 
-ova="$osname-$VM_RELEASE.ova"
+ova="$osname-$VM_RELEASE.qcow2"
 
 
 echo "Exporting $ova"
 $vmsh exportOVA $osname "$ova"
 
-cp ~/.ssh/id_rsa  $osname-$VM_RELEASE-mac.id_rsa
+cp ~/.ssh/id_rsa  $osname-$VM_RELEASE-host.id_rsa
 
 
 ls -lah
