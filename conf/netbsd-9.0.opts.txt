@@ -26,7 +26,7 @@ Partition sizes | enter
 we are now ready to install | down ; enter
 
 
-Use BIOS console | enter
+Bootblocks | enter
 
 
 Installation without X11 | down ; enter
