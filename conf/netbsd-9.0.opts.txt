@@ -31,7 +31,7 @@ Bootblocks | enter
 
 Installation without X11 | down ; enter
 
-Install from   | enter
+Your disk is now ready   | enter
 
 
 Hit enter to continue  | enter
