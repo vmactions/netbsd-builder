@@ -23,7 +23,7 @@ Use default partition sizes | down ; enter
 Partition sizes | enter
 
 
-Shall we continue | down ; enter
+we are now ready to install | down ; enter
 
 
 Use BIOS console | enter
