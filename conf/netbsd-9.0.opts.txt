@@ -5,7 +5,7 @@
 
 Installation | enter
 
-unchanged | enter
+English | enter
 
 Install NetBSD to hard disk | enter
 
