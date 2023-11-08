@@ -105,12 +105,16 @@ inputKeys "string root; enter"
 sleep 2
 
 
+if [ ! -e ~/.ssh/id_rsa ] ; then 
+  ssh-keygen -f  ~/.ssh/id_rsa -q -N "" 
+fi
+
 
 cat enablessh.txt >enablessh.local
 
 
 #add ssh key twice, to avoid bugs.
-echo "echo '$(base64 ~/.ssh/id_rsa.pub)' | openssl base64 -d >>~/.ssh/authorized_keys" >>enablessh.local
+echo "echo '$(base64 -w 0 ~/.ssh/id_rsa.pub)' | openssl base64 -d >>~/.ssh/authorized_keys" >>enablessh.local
 echo "" >>enablessh.local
 
 echo "echo '$(cat ~/.ssh/id_rsa.pub)' >>~/.ssh/authorized_keys" >>enablessh.local
