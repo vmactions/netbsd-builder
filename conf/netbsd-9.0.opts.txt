@@ -7,20 +7,20 @@ Installation | enter
 
 English | enter
 
-Install NetBSD to hard disk | enter
+Activate the current selection | enter
 
 After you enter the partition | down ; enter
 
 Available disks | enter
 
-Guid Partition Table | enter
+MBR | enter
 
-This is the correct geometr | enter
+You should only change the geometry | enter
 
 Use default partition sizes | down ; enter
 
 
-Partition sizes | enter
+Change input | enter
 
 
 we are now ready to install | down ; enter
@@ -34,11 +34,11 @@ Installation without X11 | down ; enter
 Your disk is now ready   | enter
 
 
-Hit enter to continue  | enter
+sysinst will give you the opportunity  | enter
 
 
 
-Finished |  string a ; enter 
+Configure the additional |  string a ; enter 
 
 
 
@@ -54,20 +54,14 @@ Perform autoconf | enter ; sleep 20 ; string vmactions.org ; enter ; sleep 3; en
 
 
 
-
-
-
-
-
-
 #Enable sshd 
 Fetch and unpack| string g ; enter ; sleep 1; string h ; enter ; sleep 1; string i ; enter ; sleep 1; string x ; enter 
 
 
-Hit enter to continue | enter
+At a minimum | enter
 
 
 #Reboot the computer 
-Install NetBSD| string d ; enter; sleep 20
+Reboot the computer | string d ; enter; sleep 20
 
 
