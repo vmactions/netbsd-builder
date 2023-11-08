@@ -132,7 +132,7 @@ $vmsh inputFile $osname enablessh.local
 
 ###############################################################
 
-$vmsh addSSHHost  $osname $sshport
+$vmsh addSSHHost  $osname
 
 
 ssh $osname sh <<EOF
