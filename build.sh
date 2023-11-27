@@ -61,7 +61,7 @@ chmod +x "$vmsh"
 
 
 
-
+$vmsh startWeb $osname
 
 
 $vmsh setup 
@@ -69,11 +69,6 @@ $vmsh setup
 if ! $vmsh clearVM $osname; then
   echo "vm does not exists"
 fi
-
-
-$vmsh startWeb $osname
-
-
 
 $vmsh createVM  $VM_ISO_LINK $osname $ostype $sshport
 
@@ -146,7 +141,12 @@ echo "     ServerAliveInterval 1" >>.ssh/config
 EOF
 
 
+###############################################################
+
+
 if [ -e "hooks/postBuild.sh" ]; then
+  echo "hooks/postBuild.sh"
+  cat "hooks/postBuild.sh"
   ssh $osname sh<"hooks/postBuild.sh"
 fi
 
@@ -185,6 +185,19 @@ cp ~/.ssh/id_rsa  $osname-$VM_RELEASE-host.id_rsa
 ls -lah
 
 
+##############################################################
 
+echo "Checking the packages: $VM_RSYNC_PKG $VM_SSHFS_PKG"
+
+if [ -z "$VM_RSYNC_PKG$VM_SSHFS_PKG" ]; then
+  echo "skip"
+else
+  $vmsh startVM $osname
+
+  waitForText "$VM_LOGIN_TAG"
+  sleep 2
+
+  ssh $osname sh <<<"$VM_INSTALL_CMD $VM_RSYNC_PKG $VM_SSHFS_PKG"
+fi
 
 
