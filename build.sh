@@ -29,7 +29,7 @@ vmsh="$VM_VBOX"
 
 
 export VM_OS_NAME
-
+export VM_RELEASE
 
 
 ##############################################################
@@ -80,7 +80,11 @@ $vmsh  processOpts  $osname  "$opts"
 
 
 
+$vmsh shutdownVM $osname
 
+while $vmsh isRunning $osname; do
+  sleep 5
+done
 
 
 $vmsh startVM $osname
