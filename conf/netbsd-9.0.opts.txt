@@ -31,7 +31,7 @@ Bootblocks selection | enter
 
 Installation without X11 | down ; enter
 
-Install from   | enter
+Your disk is now ready for   | enter
 
 
 Hit enter to continue  | enter
@@ -40,33 +40,29 @@ Hit enter to continue  | enter
 
 
 
-Configure the additional items as needed |  string a ; enter 
+Your disk is now ready for |  string a ; enter 
 
-Which network device would you like to use | enter
+Which network device would you like to use | enter; sleep 1; enter
 
-Network media type | enter
+#Network media type | enter
 
-Perform autoconf | enter ; sleep 20
+Perform autoconf | enter ; sleep 30 ; string vmactions.org ; enter
 
-Your DNS domain | string vmactions.org ; enter | 10
+#Your DNS domain | string vmactions.org ; enter | 10
 
-The following are the values you entered |  enter
+The following are the values you entered |  enter; sleep 2; enter; sleep 2 ; string g ; enter ; sleep 1; string h ; enter ; sleep 1; string i ; enter ; sleep 1; string x ; enter 
 
-Is the network information you entered accurate | enter
-
-
+#Is the network information you entered accurate | enter
 
 
-Enable sshd | string g ; enter ; sleep 1; string h ; enter ; sleep 1; string i ; enter ; sleep 1; string x ; enter 
+
+
+#Enable sshd | string g ; enter ; sleep 1; string h ; enter ; sleep 1; string i ; enter ; sleep 1; string x ; enter 
 
 
 Hit enter to continue | enter
 
 
-Reboot the computer | string d ; enter
+Install NetBSD to hard | string d ; enter
 
 
-Boot normally | enter
-
-
-Installation messages | down
