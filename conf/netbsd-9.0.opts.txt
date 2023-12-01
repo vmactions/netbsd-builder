@@ -1,15 +1,15 @@
 #
 # wait screen text  | press key
 
-Boot normally | enter | 10
+Boot normally | enter | 5
 
 Installation | enter
 
 unchanged | enter
 
-Install NetBSD to hard disk | enter
+Install NetBSD to hard disk | enter; sleep 2;  down ; enter
 
-Shall we continue | down ; enter
+#Shall we continue | down ; enter
 
 Available disks | enter
 
@@ -23,10 +23,10 @@ Use default partition sizes | down ; enter
 Partition sizes | enter
 
 
-Shall we continue | down ; enter
+we are now ready to install | down ; enter
 
 
-Use BIOS console | enter
+Bootblocks selection | enter
 
 
 Installation without X11 | down ; enter
