@@ -1,7 +1,7 @@
 #
 # wait screen text  | press key
 
-Boot normally | enter | 5
+Boot normally | enter | 2
 
 Installation | enter
 
@@ -40,7 +40,7 @@ Hit enter to continue  | enter
 
 
 
-Your disk is now ready for |  string a ; enter 
+Finished |  string a ; enter 
 
 Which network device would you like to use | enter; sleep 1; enter
 
