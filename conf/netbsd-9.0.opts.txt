@@ -1,68 +1,67 @@
 #
 # wait screen text  | press key
 
-Boot normally | enter | 2
+
 
 Installation | enter
 
-unchanged | enter
+English | enter
 
-Install NetBSD to hard disk | enter; sleep 2;  down ; enter
+Activate the current selection | enter
 
-#Shall we continue | down ; enter
+After you enter the partition | down ; enter
 
 Available disks | enter
 
-Guid Partition Table | enter
+MBR | enter
 
-This is the correct geometr | enter
+You should only change the geometry | enter
 
 Use default partition sizes | down ; enter
 
 
-Partition sizes | enter
+Change input | enter
 
 
 we are now ready to install | down ; enter
 
 
-Bootblocks selection | enter
+Bootblocks | enter
 
 
 Installation without X11 | down ; enter
 
-Your disk is now ready for   | enter
+FTP   | enter
 
 
-Hit enter to continue  | enter
-
-
-
-
-
-Finished |  string a ; enter 
-
-Which network device would you like to use | enter; sleep 1; enter
-
-#Network media type | enter
-
-Perform autoconf | enter ; sleep 30 ; string vmactions.org ; enter
-
-#Your DNS domain | string vmactions.org ; enter | 10
-
-The following are the values you entered |  enter; sleep 2; enter; sleep 2 ; string g ; enter ; sleep 1; string h ; enter ; sleep 1; string i ; enter ; sleep 1; string x ; enter 
-
-#Is the network information you entered accurate | enter
+sysinst will give you the opportunity  | enter
 
 
 
-
-#Enable sshd | string g ; enter ; sleep 1; string h ; enter ; sleep 1; string i ; enter ; sleep 1; string x ; enter 
-
-
-Hit enter to continue | enter
+Configure the additional |  string a ; enter 
 
 
-Install NetBSD to hard | string d ; enter
+
+Which network device would you like to use | enter
+
+
+
+To be able to use the network  | enter
+
+
+
+Perform autoconf | enter ; sleep 20 ; string vmactions.org ; enter ; sleep 3; enter; sleep 3; enter| 10
+
+
+
+#Enable sshd 
+Fetch and unpack| string g ; enter ; sleep 1; string h ; enter ; sleep 1; string i ; enter ; sleep 1; string x ; enter 
+
+
+At a minimum | enter
+
+
+#Reboot the computer 
+Reboot the computer | string d ; enter; sleep 20
 
 
