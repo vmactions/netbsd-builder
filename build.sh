@@ -88,7 +88,7 @@ done
 
 $vmsh startVM $osname
 
-
+sleep 2
 
 
 ###############################################
@@ -106,7 +106,6 @@ sleep 2
 if [ ! -e ~/.ssh/id_rsa ] ; then 
   ssh-keygen -f  ~/.ssh/id_rsa -q -N "" 
 fi
-
 
 cat enablessh.txt >enablessh.local
 
@@ -162,6 +161,34 @@ if [ "$VM_PRE_INSTALL_PKGS" ]; then
   ssh $osname sh <<<"$VM_INSTALL_CMD $VM_PRE_INSTALL_PKGS"
 fi
 
+
+#upload reboot.sh
+if [ -e "hooks/reboot.sh" ]; then
+  echo "hooks/reboot.sh"
+  cat "hooks/reboot.sh"
+  scp hooks/reboot.sh $osname:/reboot.sh
+else
+  ssh "$osname" "cat - >/reboot.sh" <<EOF
+sleep 5
+ssh host "touch $osname.rebooted"
+EOF
+fi
+
+
+#set cronjob
+ssh "$osname" sh <<EOF
+chmod +x /reboot.sh
+cat /reboot.sh
+if uname -a | grep SunOS >/dev/null; then
+crontab -l | {  cat;  echo "@reboot /reboot.sh";   } | crontab --
+else
+crontab -l | {  cat;  echo "@reboot /reboot.sh";   } | crontab -
+fi
+crontab -l
+
+EOF
+
+
 ssh $osname  "$VM_SHUTDOWN_CMD"
 
 sleep 5
@@ -197,11 +224,9 @@ echo "Checking the packages: $VM_RSYNC_PKG $VM_SSHFS_PKG"
 if [ -z "$VM_RSYNC_PKG$VM_SSHFS_PKG" ]; then
   echo "skip"
 else
+  $vmsh addSSHAuthorizedKeys $osname-$VM_RELEASE-id_rsa.pub
   $vmsh startVM $osname
-
-  waitForText "$VM_LOGIN_TAG"
-  sleep 2
-
+  $vmsh waitForVMReady $osname
   ssh $osname sh <<<"$VM_INSTALL_CMD $VM_RSYNC_PKG $VM_SSHFS_PKG"
 fi
 
