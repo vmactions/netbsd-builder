@@ -31,6 +31,8 @@ vmsh="$VM_VBOX"
 export VM_OS_NAME
 export VM_RELEASE
 export VM_OCR
+export VM_DISK
+
 
 ##############################################################
 
@@ -170,7 +172,11 @@ if [ -e "hooks/reboot.sh" ]; then
 else
   ssh "$osname" "cat - >/reboot.sh" <<EOF
 sleep 5
-ssh host "touch $osname.rebooted"
+ssh host sh <<END
+env | grep SSH_CLIENT | cut -d = -f 2 | cut -d ' ' -f 1 >$osname.rebooted
+
+END
+
 EOF
 fi
 
