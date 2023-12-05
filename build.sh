@@ -98,9 +98,10 @@ sleep 2
 
 
 waitForText "$VM_LOGIN_TAG"
-sleep 2
 
-inputKeys "string root; enter"
+sleep 3
+
+inputKeys "string root ; enter ; enter"
 
 sleep 2
 
@@ -135,7 +136,7 @@ $vmsh addSSHHost  $osname
 
 
 ssh $osname sh <<EOF
-echo 'StrictHostKeyChecking=accept-new' >.ssh/config
+echo 'StrictHostKeyChecking=no' >.ssh/config
 
 echo "Host host" >>.ssh/config
 echo "     HostName  192.168.122.1" >>.ssh/config
@@ -186,7 +187,7 @@ ssh "$osname" sh <<EOF
 chmod +x /reboot.sh
 cat /reboot.sh
 if uname -a | grep SunOS >/dev/null; then
-crontab -l | {  cat;  echo "@reboot /reboot.sh";   } | crontab --
+crontab -l | {  cat;  echo "* * * * * /reboot.sh";   } | crontab --
 else
 crontab -l | {  cat;  echo "@reboot /reboot.sh";   } | crontab -
 fi
