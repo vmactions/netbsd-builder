@@ -20,6 +20,6 @@ How to use:
 
     Just clone the repo. and run:
     ```bash
-    bash build.sh conf/{{LATEST_RELEASE}}.conf
+    bash build.sh {{LATEST_CONF}}
     ```
    
