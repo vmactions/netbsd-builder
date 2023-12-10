@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-22.04
     env:
       DEBUG: 1
-      VM_OS_NAME: {{VM_NAME}}
       NGROK_TOKEN : ${{ secrets.NGROK_TOKEN }}
       SEC_VBOX : ${{ secrets.SEC_VBOX }}
     steps:
@@ -28,10 +27,10 @@ jobs:
     - name: Sleep
       run: |
         for i in $(seq 1 10) ; do echo $i; sleep 1; done
-        latest=$(cat $(ls conf/{{VM_NAME}}-*.conf | tail -1) | grep VM_RELEASE | cut -d = -f 2)
+        latest=$(cat $(ls conf/netbsd-*.conf | tail -1) | grep VM_RELEASE | cut -d = -f 2)
         echo "please loging to ssh below, and run:"
         echo "============================="
-        echo "bash build.sh conf/{{VM_NAME}}-$latest.conf"
+        echo "bash build.sh conf/netbsd-$latest.conf"
         echo "============================="
         touch /tmp/keepalive
 

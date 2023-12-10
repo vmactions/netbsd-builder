@@ -46,7 +46,7 @@ jobs:
         protocol: http
         port: 8000
     - run: |
-        bash build.sh conf/{{VM_OS_NAME}}-${{ matrix.os }}.conf
+        bash build.sh conf/netbsd-${{ matrix.os }}.conf
     - name: Upload Release Asset
       if: "contains(github.ref, 'refs/tags/')"
       id: upload-release-asset
@@ -55,8 +55,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         files: |
-          {{VM_OS_NAME}}-${{ matrix.os }}.qcow2.xz
-          {{VM_OS_NAME}}-${{ matrix.os }}-id_rsa.pub
-          {{VM_OS_NAME}}-${{ matrix.os }}-host.id_rsa
+          netbsd-${{ matrix.os }}.qcow2.xz
+          netbsd-${{ matrix.os }}-id_rsa.pub
+          netbsd-${{ matrix.os }}-host.id_rsa
 
 
