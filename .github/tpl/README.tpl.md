@@ -10,7 +10,7 @@ The image builder for [{{VM_OS_NAME}}-vm](https://github.com/vmactions/{{VM_OS_N
 
 How to use:
 
-1. Use the [manual.yml](.github/workflow/manual.yml) to build manually.
+1. Use the [manual.yml](.github/workflows/manual.yml) to build manually.
    
     Run the workflow manually, you will get a view-only webconsole from the output of the workflow, just open the link in your web browser.
    
