@@ -20,6 +20,6 @@ How to use:
 
     Just clone the repo. and run:
     ```bash
-    bash build.sh conf/conf/netbsd-9.3.conf.conf
+    bash build.sh conf/netbsd-9.3.conf
     ```
    
