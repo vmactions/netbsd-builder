@@ -6,7 +6,8 @@
 
 rm -f /usr/pkg/etc/openssl/certs/*
 
-rm -rf /etc/openssl/certs/*
+rm -rf /etc/openssl/certs
+
 
 
 /usr/pkg/sbin/mozilla-rootcerts  install
