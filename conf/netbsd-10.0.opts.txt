@@ -56,6 +56,8 @@ Perform autoconf | enter ; sleep 20 ; string vmactions.org ; enter ; sleep 3; en
 
 
 
+Is the network information you entered accurate | enter
+
 #Enable sshd 
 Fetch and unpack| string g ; enter ; sleep 1; string h ; enter ; sleep 1; string i ; enter ; sleep 1; string x ; enter 
 
