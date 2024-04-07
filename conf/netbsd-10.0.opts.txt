@@ -1,0 +1,69 @@
+#
+# wait screen text  | press key
+
+
+
+Installation | enter
+
+English | enter
+
+Activate the current selection | enter
+
+After you enter the partition | down ; enter
+
+Available disks | enter
+
+MBR | enter
+
+You should only change the geometry | enter
+
+Use default partition sizes | down ; enter
+
+
+Change input | enter
+
+
+we are now ready to install | down ; enter
+
+
+Bootblocks | enter
+
+
+Installation without X11 | down ; enter
+
+FTP   | enter
+
+
+sysinst will give you the opportunity  | enter
+
+
+Changing local password for root | enter
+
+
+Configure the additional |  string a ; enter 
+
+
+
+Which network device would you like to use | enter
+
+
+
+To be able to use the network  | enter
+
+
+
+Perform autoconf | enter ; sleep 20 ; string vmactions.org ; enter ; sleep 3; enter; sleep 3; enter| 10
+
+
+
+#Enable sshd 
+Fetch and unpack| string g ; enter ; sleep 1; string h ; enter ; sleep 1; string i ; enter ; sleep 1; string x ; enter 
+
+
+At a minimum | enter
+
+
+#Reboot the computer 
+Reboot the computer | string d ; enter; sleep 20
+
+
