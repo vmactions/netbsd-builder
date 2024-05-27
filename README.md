@@ -2,7 +2,7 @@
 
 [![Build](https://github.com/vmactions/netbsd-builder/actions/workflows/build.yml/badge.svg)](https://github.com/vmactions/netbsd-builder/actions/workflows/build.yml)
 
-Latest: v0.9.4
+Latest: v0.9.5
 
 
 The image builder for [netbsd-vm](https://github.com/vmactions/netbsd-vm)
@@ -20,6 +20,6 @@ How to use:
 
     Just clone the repo. and run:
     ```bash
-    bash build.sh conf/netbsd-9.3.conf
+    bash build.sh conf/netbsd-9.4.conf
     ```
    
