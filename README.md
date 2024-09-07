@@ -2,7 +2,7 @@
 
 [![Build](https://github.com/vmactions/netbsd-builder/actions/workflows/build.yml/badge.svg)](https://github.com/vmactions/netbsd-builder/actions/workflows/build.yml)
 
-Latest: v0.9.6
+Latest: v0.9.7
 
 
 The image builder for [netbsd-vm](https://github.com/vmactions/netbsd-vm)
