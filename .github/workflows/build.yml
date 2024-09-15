@@ -61,7 +61,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         files: |
-          netbsd-${{ matrix.os }}.qcow2.xz*
+          netbsd-${{ matrix.os }}.qcow2.zst*
           netbsd-${{ matrix.os }}-id_rsa.pub
           netbsd-${{ matrix.os }}-host.id_rsa
 
