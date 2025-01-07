@@ -32,6 +32,7 @@ concurrency:
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         os: ["9.3", "9.4", "10.0", "10.1"]
     runs-on: ubuntu-24.04
