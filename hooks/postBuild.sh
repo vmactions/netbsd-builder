@@ -2,8 +2,8 @@
 
 
 if uname -a | grep "evbarm"; then
-  export PKG_PATH="http://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/aarch64/$VM_RELEASE/All/"
-  echo "export PKG_PATH=\"http://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/aarch64/$VM_RELEASE/All/\"" >>/etc/profile
+  export PKG_PATH="http://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/aarch64/$VM_RELEASE/All"
+  echo "export PKG_PATH=\"http://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/aarch64/$VM_RELEASE/All\"" >>/etc/profile
 fi
 
 
