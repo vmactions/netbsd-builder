@@ -65,5 +65,6 @@ jobs:
           netbsd-${{ matrix.os }}.qcow2.zst*
           netbsd-${{ matrix.os }}-id_rsa.pub
           netbsd-${{ matrix.os }}-host.id_rsa
+          netbsd-${{ matrix.os }}.xml
 
 
